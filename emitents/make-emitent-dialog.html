@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Make emitent</h2>
+<div mat-dialog-content class="make-emitent">
+	<mat-form-field>
+		<input #field1 matInput placeholder="Address" [(ngModel)]="emitentBlank.address" value="{{emitentBlank.address}}" disabled>
+	</mat-form-field>
+	<mat-form-field>
+		<input #field2 matInput placeholder="Public Key" [(ngModel)]="emitentBlank.pubkey" value="{{emitentBlank.pubkey}}" disabled>
+	</mat-form-field>
+	<mat-form-field>
+		<input #field3 matInput placeholder="Private Key" [(ngModel)]="emitentBlank.privkey" value="{{emitentBlank.privkey}}" disabled>
+	</mat-form-field>
+	<mat-form-field>
+		<input #field4 required matInput placeholder="City" [(ngModel)]="emitentBlank.city">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field5 required matInput placeholder="Region" [(ngModel)]="emitentBlank.region">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field6 required matInput placeholder="Description" [(ngModel)]="emitentBlank.description">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field7 required matInput placeholder="Pubkey Confirmation" [(ngModel)]="emitentBlank.pubkey_confirmation">
+	</mat-form-field>
+</div>
+<mat-dialog-actions>
+	<button mat-button [mat-dialog-close]="emitentBlank" [disabled]="!(field1.value && field2.value && field3.value && field4.value && field5.value && field6.value && field7.value)">Make</button>
+	<button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

@@ -1,0 +1,44 @@
+<div class="container">
+    <div fxLayout="row" fxLayoutGap="10px" fxFlex>
+        <h3>Keys:</h3>
+
+        <button mat-raised-button color="primary" (click)="askKeyName()"> Generate </button>
+
+        <mat-card *ngFor="let emitent of emitents" fxFlex="30">
+            <mat-card-header>
+                <mat-card-title>
+                    <h3>{{emitent.title}}</h3>
+                    <div *ngIf="emitent.isEmitent">[EMITENT]</div>
+                </mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-card-title-group>
+                    <mat-card-subtitle>
+                        Address
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+                <p>
+                    {{emitent.address}}
+                </p>
+                <mat-card-title-group>
+                    <mat-card-subtitle>
+                        Public Key
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+                <p>
+                    {{emitent.pubkey}}
+                </p>
+                <mat-card-title-group>
+                    <mat-card-subtitle>
+                        Private Key
+                    </mat-card-subtitle>
+                </mat-card-title-group>
+                <p>
+                    {{emitent.privkey}}
+                </p>
+                <button *ngIf="!emitent.isEmitent" mat-raised-button (click)="makeEmitent(emitent)">Make emitent</button>
+                <button *ngIf="emitent.isEmitent" mat-raised-button (click)="makeCoupon(emitent)">+ Coupon</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

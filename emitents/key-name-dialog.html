@@ -1,0 +1,11 @@
+<h2 mat-dialog-title>Generate key</h2>
+<div mat-dialog-content>
+	<p>New key's name:</p>
+	<mat-form-field>
+		<input matInput placeholder="Name" [(ngModel)]="name">
+	</mat-form-field>
+</div>
+<mat-dialog-actions>
+	<button mat-button [mat-dialog-close]="name">Generate</button>
+	<button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

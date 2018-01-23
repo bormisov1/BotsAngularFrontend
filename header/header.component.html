@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <span>ВИЧ-консультант Райан</span>
+	<div *ngFor="let button of buttons">
+		<a mat-raised-button *ngIf="button.whatStatusFor === userStatus" [routerLink]="button.href" color="primary">
+			{{button.text}}
+		</a>
+	</div>
+</mat-toolbar>

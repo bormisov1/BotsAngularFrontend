@@ -1,0 +1,28 @@
+<h2 mat-dialog-title>Make coupon</h2>
+<div mat-dialog-content class="make-coupon">
+	<mat-form-field>
+		<input #field1 required matInput placeholder="Title" value="{{ofEmitent.title}}" disabled>
+	</mat-form-field>
+	<mat-form-field>
+		<input #field2 required matInput placeholder="Description" [(ngModel)]="couponForm.description" value="{{couponForm.description}}">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field3 required matInput placeholder="Unit" [(ngModel)]="couponForm.unit" value="{{couponForm.unit}}">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field4 required matInput placeholder="Currency" [(ngModel)]="couponForm.currency" value="{{couponForm.currency}}">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field5 required matInput placeholder="Unit Price" [(ngModel)]="couponForm.unit_price" value="{{couponForm.unit_price}}">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field6 required matInput placeholder="Coupon Quantity" [(ngModel)]="couponForm.coupon_quantity" value="{{couponForm.coupon_quantity}}">
+	</mat-form-field>
+	<mat-form-field>
+		<input #field7 required matInput placeholder="Quantity Limit" [(ngModel)]="couponForm.quantity_limit" value="{{couponForm.quantity_limit}}">
+	</mat-form-field>
+</div>
+<mat-dialog-actions>
+	<button mat-button [mat-dialog-close]="couponForm" [disabled]="!(field1.value && field2.value && field3.value && field4.value && field5.value && field6.value && field7.value)">Add</button>
+	<button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>
